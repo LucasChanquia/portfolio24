@@ -22,22 +22,17 @@ export default function NavbarApp() {
 						</Link>
 					</NavbarItem>
 					<NavbarItem>
-						<Link color={activeLink === 'about'? 'secondary' : "foreground"} href="#about" onClick={() => setActiveLink("about")}>
-							About me
+						<Link color={activeLink === 'jobs'? 'secondary' : "foreground"} href="#jobs" onClick={() => setActiveLink("jobs")}>
+							Jobs & Projects
 						</Link>
 					</NavbarItem>
-					<NavbarItem>
-						<Link color={activeLink === 'jobs'? 'secondary' : "foreground"} href="#" onClick={() => setActiveLink("jobs")}>
-							Jobs
-						</Link>
-					</NavbarItem>
-					<NavbarItem>
-						<Link href="#" color={activeLink === 'projects'? 'secondary' : "foreground"} onClick={() => setActiveLink("projects")}>
+					{/* <NavbarItem>
+						<Link href="#projects" color={activeLink === 'projects'? 'secondary' : "foreground"} onClick={() => setActiveLink("projects")}>
 							Proyects
 						</Link>
-					</NavbarItem>
+					</NavbarItem> */}
 					<NavbarItem>
-						<Link color={activeLink === 'contact'? 'secondary' : "foreground"} href="#" onClick={() => setActiveLink("contact")}>
+						<Link color={activeLink === 'contact'? 'secondary' : "foreground"} href="#contact" onClick={() => setActiveLink("contact")}>
 							Contact
 						</Link>
 					</NavbarItem>

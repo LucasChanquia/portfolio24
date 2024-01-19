@@ -6,7 +6,14 @@ import { Providers } from "./providers";
 import NavbarApp from "@/components/navbar";
 import { Link } from "@nextui-org/link";
 import clsx from "clsx";
+import { Inter } from "next/font/google";
 
+export const inter = Inter({
+	subsets: ['latin'],
+	display: 'swap',
+  })
+  
+  
 export const metadata: Metadata = {
 	title: {
 		default: siteConfig.name,
@@ -35,7 +42,7 @@ export default function RootLayout({
 			<body
 				className={clsx(
 					"min-h-screen bg-background font-sans antialiased",
-					fontSans.variable
+					inter.className
 				)}
 			>
 				<Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>

@@ -7,6 +7,7 @@ import Image from "next/image";
 
 
 export default function NavbarApp() {
+	const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 	const [activeLink, setActiveLink] = React.useState('home')
 
 	return (
@@ -22,7 +23,7 @@ export default function NavbarApp() {
 						</Link>
 					</NavbarItem>
 					<NavbarItem>
-						<Link color={activeLink === 'jobs'? 'secondary' : "foreground"} href="#jobs" onClick={() => setActiveLink("jobs")}>
+						<Link color={activeLink === 'jobs'? 'secondary' : "foreground"} href="#job" onClick={() => setActiveLink("jobs")}>
 							Jobs & Projects
 						</Link>
 					</NavbarItem>

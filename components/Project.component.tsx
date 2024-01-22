@@ -18,10 +18,11 @@ type CardProps = {
     description: string
     skill: string[]
     url: string
+    git?: string
 }
 
 
-export function ProjectsCard({ id, name, image, description, skill, url }: CardProps) {
+export function ProjectsCard({ id, name, image, description, skill, url, git }: CardProps) {
 
     const CustomPrevArrow = (props: any) => {
 
@@ -67,20 +68,24 @@ export function ProjectsCard({ id, name, image, description, skill, url }: CardP
 
     return (
         <div className="w-full h-auto">
-            <div className='grid grid-cols-5 w-full gap-1 px-[20px] py-5' >
-                <div className='col-span-3 gap-3 pr-5'>
+            <div className='md:grid md:grid-cols-5 w-full gap-1 px-[20px] py-5' >
+                <div className='md:col-span-3 gap-3 pb-5 md:pb-0 md:pr-5'>
                     <h3 className={`${title({ color: "cyan" })} ${ibm.className} text-center text-[25px]`}>{name}</h3>
                     <p className='text-justify leading-6 py-3'>{description}</p>
-                    <Link href={url} color='secondary' target='_blank' className='flex pl-1 pt-2'><i className="fi fi-rr-site-browser"></i></Link>
+                    <div className='flex gap-3'>
+                        <Link href={url} color='secondary' target='_blank' className='flex pl-1 pt-2'><i className="fi fi-rr-site-browser"></i></Link>
+                        {git && <Link href={git} color='secondary' target='_blank' className='flex pl-1 pt-2'><i className="fi fi-brands-github"></i></Link>}
+                    </div>
+
                 </div>
 
-                <div className='col-span-2 max-w-[450px]'>
+                <div className='md:col-span-2 max-w-[450px]'>
                     <Slider {...settings}>
                         {image.map((imag, index) => (
                             <Image key={index} src={imag} alt={name} width={450} height={350} isZoomed className='w-full h-[250px]' />
                         ))}
                     </Slider>
-                    <div className='flex justify-center gap-3 pt-5'>
+                    <div className='flex justify-center gap-3 pt-5 flex-wrap'>
                         {skill.map((skil, index) => (
                             <Chip
                                 key={index}

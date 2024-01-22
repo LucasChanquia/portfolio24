@@ -62,13 +62,13 @@ export function JobsCard({ id, name, image, description, skill, url }: CardProps
         prevArrow: <CustomPrevArrow />,
         nextArrow: <CustomNextArrow />,
         dotsClass: 'dots',
-        customPaging: () => <i className='fi fi-sr-bullet text-violet-900'></i>,
+        customPaging: () => <i className='fi fi-sr-bullet'></i>,
     }
 
     return (
-        <div className="w-full h-full">
-            <div className='grid grid-cols-5 w-full gap-1 px-[20px] py-5 ' >
-                <div className='col-span-2 max-w-[450px]'>
+        <div className="w-full h-full ">
+            <div className='md:grid md:grid-cols-5 w-full gap-1 px-[20px] py-5 ' >
+                <div className='md:col-span-2 max-w-[450px]'>
                     <Slider {...settings}>
                         {image.map((imag, index) => (
 
@@ -76,7 +76,7 @@ export function JobsCard({ id, name, image, description, skill, url }: CardProps
 
                         ))}
                     </Slider>
-                    <div className='flex justify-center gap-3 pt-5'>
+                    <div className='flex justify-center gap-3 pt-5 flex-wrap'>
                         {skill.map((skil, index) => (
                             <Chip
                                 key={index}
@@ -90,7 +90,7 @@ export function JobsCard({ id, name, image, description, skill, url }: CardProps
                     </div>
                 </div>
 
-                <div className='col-span-3 gap-3'>
+                <div className='md:col-span-3 gap-3'>
                     <h3 className={`${title({ color: "cyan" })} ${ibm.className} text-center text-[25px]`}>{name}</h3>
                     <p className='text-justify leading-6 py-3'>{description}</p>
                     <Link href={url} color='secondary' target='_blank' className='flex pl-1 pt-2'><i className="fi fi-rr-site-browser"></i></Link>

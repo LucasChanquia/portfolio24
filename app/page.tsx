@@ -21,6 +21,9 @@ import { Shadows_Into_Light } from 'next/font/google';
 import { Macondo_Swash_Caps } from 'next/font/google';
 import { Caveat } from 'next/font/google';
 import { IBM_Plex_Mono } from 'next/font/google';
+import { Contact } from '@/components/Contact.component';
+
+
 
 export const shadow = Shadows_Into_Light({ weight: '400', subsets: ['latin'] })
 export const macondo = Macondo_Swash_Caps({ weight: '400', subsets: ['latin'] })
@@ -34,6 +37,7 @@ export type CardProps = {
 	description: string
 	skill: string[]
 	url: string
+	git?: string
 }
 
 
@@ -60,10 +64,10 @@ export default function Home() {
 
 	return (
 		<>
-			<section className=" py-8 md:py-10 w-full">
+			<section className="w-full">
 				<article id="home" className='pb-[20px]'>
-					<div className="grid grid-cols-1 md:grid-cols-4 justify-center gap-4">
-						<div className="col-span-3 gap-2  ">
+					<div className="grid md:grid-cols-4 h-full justify-center gap-4">
+						<div className="col-span-3 gap-2 ">
 							<h1 className={title()}>{showTitle}</h1>
 							<br />
 							<br />
@@ -71,11 +75,11 @@ export default function Home() {
 
 							<br />
 							<span className={`${title({ color: "blue" })} ${shadow.className} text-[20px]`}>{`< About Me >`}</span>
-							<span className="text-[40px] text-violet-600">{`I´`}</span>
+							<span className="text-[40px] text-violet-500">{`I´`}</span>
 							<span className="text-[18px] text-justify">am a front-end web development professional based in Córdoba, Argentina, with two years of industry experience. I love tackling complex challenges and continuously learning, especially when it comes to working in a team.<br /> As a freelancer, I strive to be responsible and responsive, always aiming to exceed expectations and provide creative and innovative solutions. I am committed to constant growth and delivering high-quality products.</span>
 							<span className={`${title({ color: "blue" })} ${shadow.className} text-[20px]`}>{`</ About Me >`}</span>
 						</div>
-						<div className="relative w-auto h-auto rounded-6">
+						<div className="col-span-3 md:col-span-1 w-auto md:h-auto rounded-6">
 							<Image src='/image/perfil/vector.png' alt="Imagen de perfil" width={300} height={500} />
 						</div>
 					</div>
@@ -95,8 +99,8 @@ export default function Home() {
 					</div>
 				</article>
 
-				<article id='#job' className='pt-[60px]'>
-					<div className='w-full h-full pb-[20px]'>
+				<article id='job' className='pt-[60px]'>
+					<div className='w-full h-full pb-[20px] border-b border-b-violet-700'>
 						<h3 className={`${title({ color: "blue" })} ${macondo.className} text-[30px] pl-[20px]`}>{`< Jobs />`}</h3>
 						<article className='w-full'>
 
@@ -107,18 +111,27 @@ export default function Home() {
 						</article>
 					</div>
 
-					<div className='py-[20px]'>
+					<div className='py-[20px] border-b border-b-violet-700'>
 						<h3 className={`${title({ color: "blue" })} ${macondo.className} text-[30px] py-[20px] flex justify-end px-[20px]`}>{`< Projects />`}</h3>
 
 						<article className='w-full'>
 
-							{projects.map(({ id, name, image, description, skill, url }: CardProps) => (
-								<ProjectsCard id={id} name={name} image={image} description={description} skill={skill} url={url} />
+							{projects.map(({ id, name, image, description, skill, url, git }: CardProps) => (
+								<ProjectsCard id={id} name={name} image={image} description={description} skill={skill} url={url} git={git} />
 							))}
 
 						</article>
 					</div>
+
+					<article id='contact' className='w-full '>
+						
+								<Contact />
+						
+
+					</article>
 				</article>
+
+
 
 
 			</section>

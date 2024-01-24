@@ -39,21 +39,21 @@
 .dots li i:hover:before,
 .dots li i:focus:before {
   opacity: 1;
-  color: #fff;
+  color: #990000;
 }
 
 .dots li i:before {
   width: 20px;
   height: 20px;
   opacity: .5;
-  color: #fff;
+  color: #990000;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 .dots li.slick-active i:before {
   opacity: 1;
-  color: #fff;
+  color: #990000;
 }
 
 .slick-slider button {

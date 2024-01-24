@@ -6,10 +6,10 @@ import 'slick-carousel/slick/slick.css'
 
 import { Chip } from '@nextui-org/react'
 import Link from 'next/link'
-import { ibm } from '@/app/page'
 import { title } from './primitives'
+import { IBM_Plex_Mono } from 'next/font/google'
 
-
+const ibm = IBM_Plex_Mono({ weight: '400', subsets: ['latin'] })
 
 type CardProps = {
     id: number
@@ -17,7 +17,7 @@ type CardProps = {
     image: string[]
     description: string
     skill: string[]
-    url: string
+    url?: string
 }
 
 
@@ -68,7 +68,7 @@ export function JobsCard({ id, name, image, description, skill, url }: CardProps
     return (
         <div className="w-full h-full ">
             <div className='md:grid md:grid-cols-5 w-full gap-1 px-[20px] py-5 ' >
-                <div className='md:col-span-2 max-w-[450px]'>
+                <div className='md:col-span-2 max-w-[450px] pr-5 md:pr-3'>
                     <Slider {...settings}>
                         {image.map((imag, index) => (
 
@@ -90,10 +90,10 @@ export function JobsCard({ id, name, image, description, skill, url }: CardProps
                     </div>
                 </div>
 
-                <div className='md:col-span-3 gap-3'>
+                <div className='md:col-span-3 gap-3 pt-5 md:pt-0'>
                     <h3 className={`${title({ color: "cyan" })} ${ibm.className} text-center text-[25px]`}>{name}</h3>
                     <p className='text-justify leading-6 py-3'>{description}</p>
-                    <Link href={url} color='secondary' target='_blank' className='flex pl-1 pt-2'><i className="fi fi-rr-site-browser"></i></Link>
+                    {url && <Link href={url} color='secondary' target='_blank' className='flex pl-1 pt-2'><i className="fi fi-rr-site-browser"></i></Link>}
                 </div>
             </div >
 

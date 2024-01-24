@@ -1,15 +1,9 @@
 'use client'
 
-// import 'styles/globals.css'
 import 'styles/styles.css'
-import { Link } from "@nextui-org/link";
-import { Snippet } from "@nextui-org/snippet";
-import { Code } from "@nextui-org/code"
-import { button as buttonStyles, scrollShadow } from "@nextui-org/theme";
-import { siteConfig } from "@/config/site";
-import { title, subtitle } from "@/components/primitives";
-import { GithubIcon } from "@/components/icons";
-import { useRef, useEffect, useState, useLayoutEffect } from "react";
+import { title } from "@/components/primitives";
+import { useState } from 'react';
+import { useLayoutEffect } from "react";
 import style from "../styles/pageStyles.module.css"
 import Image from "next/image";
 import { skill } from "@/components/Skill.component";
@@ -18,17 +12,13 @@ import { ProjectsCard } from '@/components/Project.component';
 import { jobs } from "@/components/Utils/JobsItem";
 import { projects } from '@/components/Utils/ProjectsItem';
 import { Shadows_Into_Light } from 'next/font/google';
-import { Macondo_Swash_Caps } from 'next/font/google';
+import { Comfortaa } from 'next/font/google';
 import { Caveat } from 'next/font/google';
-import { IBM_Plex_Mono } from 'next/font/google';
 import { Contact } from '@/components/Contact.component';
 
-
-
-export const shadow = Shadows_Into_Light({ weight: '400', subsets: ['latin'] })
-export const macondo = Macondo_Swash_Caps({ weight: '400', subsets: ['latin'] })
-export const caveat = Caveat({ weight: '400', subsets: ['latin'] })
-export const ibm = IBM_Plex_Mono({ weight: '400', subsets: ['latin'] })
+const shadow = Shadows_Into_Light({ weight: '400', subsets: ['latin'] })
+const comfortaa = Comfortaa({ weight: '400', subsets: ['latin'] })
+const caveat = Caveat({ weight: '400', subsets: ['latin'] })
 
 export type CardProps = {
 	id: number
@@ -36,7 +26,7 @@ export type CardProps = {
 	image: string[]
 	description: string
 	skill: string[]
-	url: string
+	url?: string
 	git?: string
 }
 
@@ -64,8 +54,8 @@ export default function Home() {
 
 	return (
 		<>
-			<section className="w-full">
-				<article id="home" className='pb-[20px]'>
+			<section className="w-full h-full">
+				<article id="#" className='pb-[20px]'>
 					<div className="grid md:grid-cols-4 h-full justify-center gap-4">
 						<div className="col-span-3 gap-2 ">
 							<h1 className={title()}>{showTitle}</h1>
@@ -79,20 +69,16 @@ export default function Home() {
 							<span className="text-[18px] text-justify">am a front-end web development professional based in Córdoba, Argentina, with two years of industry experience. I love tackling complex challenges and continuously learning, especially when it comes to working in a team.<br /> As a freelancer, I strive to be responsible and responsive, always aiming to exceed expectations and provide creative and innovative solutions. I am committed to constant growth and delivering high-quality products.</span>
 							<span className={`${title({ color: "blue" })} ${shadow.className} text-[20px]`}>{`</ About Me >`}</span>
 						</div>
-						<div className="col-span-3 md:col-span-1 w-auto md:h-auto rounded-6">
-							<Image src='/image/perfil/vector.png' alt="Imagen de perfil" width={300} height={500} />
+						<div className="col-span-3 md:col-span-1 md:h-auto rounded-6 w-full mx-auto">
+							<Image src='/image/perfil/Vector.png' alt="Imagen de perfil" width={300} height={500} className='m-auto' />
 						</div>
 					</div>
 
 					<div className="pt-[20px]">
-						{/* <h3 className={macondo.className}>Skills</h3> */}
-
 						<div className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-8 gap-3 justify-center">
 							{skill.map((e: any) => (
 								<div key={e.id} className="mx-auto">
-
 									<Image src={e.name} alt={e.name} width={100} height={100} className=" hover:scale-110 p-2" />
-
 								</div>
 							))}
 						</div>
@@ -101,41 +87,28 @@ export default function Home() {
 
 				<article id='job' className='pt-[60px]'>
 					<div className='w-full h-full pb-[20px] border-b border-b-violet-700'>
-						<h3 className={`${title({ color: "blue" })} ${macondo.className} text-[30px] pl-[20px]`}>{`< Jobs />`}</h3>
+						<h3 className={`${title({ color: "blue" })} ${comfortaa.className} text-[30px] pl-[20px]`}>{`< Jobs />`}</h3>
 						<article className='w-full'>
-
 							{jobs.map(({ id, name, image, description, skill, url }: CardProps) => (
-								<JobsCard id={id} name={name} image={image} description={description} skill={skill} url={url} />
+								<JobsCard key={id} id={id} name={name} image={image} description={description} skill={skill} url={url} />
 							))}
-
 						</article>
 					</div>
 
 					<div className='py-[20px] border-b border-b-violet-700'>
-						<h3 className={`${title({ color: "blue" })} ${macondo.className} text-[30px] py-[20px] flex justify-end px-[20px]`}>{`< Projects />`}</h3>
-
+						<h3 className={`${title({ color: "blue" })} ${comfortaa.className} text-[30px] py-[20px] flex justify-end px-[20px]`}>{`< Projects />`}</h3>
 						<article className='w-full'>
-
 							{projects.map(({ id, name, image, description, skill, url, git }: CardProps) => (
-								<ProjectsCard id={id} name={name} image={image} description={description} skill={skill} url={url} git={git} />
+								<ProjectsCard key={id} id={id} name={name} image={image} description={description} skill={skill} url={url} git={git} />
 							))}
-
 						</article>
 					</div>
 
-					<article id='contact' className='w-full '>
-						
+					<article id='contact' className='w-full'>
 								<Contact />
-						
-
 					</article>
 				</article>
-
-
-
-
 			</section>
 		</>
-
 	);
 }

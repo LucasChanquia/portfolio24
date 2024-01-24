@@ -6,10 +6,11 @@ import 'slick-carousel/slick/slick.css'
 
 import { Chip } from '@nextui-org/react'
 import Link from 'next/link'
-import { ibm } from '@/app/page'
+import { IBM_Plex_Mono } from 'next/font/google'
 import { title } from './primitives'
 
 
+const ibm = IBM_Plex_Mono({ weight: '400', subsets: ['latin'] })
 
 type CardProps = {
     id: number
@@ -17,7 +18,7 @@ type CardProps = {
     image: string[]
     description: string
     skill: string[]
-    url: string
+    url?: string
     git?: string
 }
 
@@ -63,7 +64,7 @@ export function ProjectsCard({ id, name, image, description, skill, url, git }: 
         prevArrow: <CustomPrevArrow />,
         nextArrow: <CustomNextArrow />,
         dotsClass: 'dots',
-        customPaging: () => <i className='fi fi-sr-bullet text-violet-900'></i>,
+        customPaging: () => <i className='fi fi-sr-bullet'></i>,
     }
 
     return (
@@ -73,7 +74,7 @@ export function ProjectsCard({ id, name, image, description, skill, url, git }: 
                     <h3 className={`${title({ color: "cyan" })} ${ibm.className} text-center text-[25px]`}>{name}</h3>
                     <p className='text-justify leading-6 py-3'>{description}</p>
                     <div className='flex gap-3'>
-                        <Link href={url} color='secondary' target='_blank' className='flex pl-1 pt-2'><i className="fi fi-rr-site-browser"></i></Link>
+                        {url && <Link href={url} color='secondary' target='_blank' className='flex pl-1 pt-2'><i className="fi fi-rr-site-browser"></i></Link>}
                         {git && <Link href={git} color='secondary' target='_blank' className='flex pl-1 pt-2'><i className="fi fi-brands-github"></i></Link>}
                     </div>
 
@@ -89,7 +90,6 @@ export function ProjectsCard({ id, name, image, description, skill, url, git }: 
                         {skill.map((skil, index) => (
                             <Chip
                                 key={index}
-                                // startContent={<i className="fi-rs-it pr-2 pl-2"></i>}
                                 variant="faded"
                                 color="success"
                             >

@@ -13,7 +13,7 @@ export default function NavbarApp() {
 
 	const handleDownload = () => {
 		const fileName = "Resume-LucasChanquia.pdf";
-		const fileUrl = `/Cv/${fileName}`;
+		const fileUrl = `/${fileName}`;
 
 		const link = document.createElement("a");
 		link.href = fileUrl;

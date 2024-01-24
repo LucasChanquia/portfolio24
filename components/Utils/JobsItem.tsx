@@ -11,7 +11,7 @@ export const jobs = [
         id: 2,
         name: 'Findink',
         image: ['/image/Findink/uno.png', '/image/Findink/dos.png', '/image/Findink/tres.png', '/image/Findink/cuatro.png'],
-        description:'Findink is a startup focused on connecting tattoo artists with clients. In the project, it was my responsibility to refactor the login (sign-up & register) and forgot password functionalities. These components were implemented with a validator for each input, resulting in a significant improvement in the user experience.',
+        description:'Findink is a startup focused on connecting tattoo artists with clients. In the project, it was my responsibility to refactor the login (Login/register) and forgot password functionalities. These components were implemented with a validator for each input, resulting in a significant improvement in the user experience.',
         skill: ['NextJs', 'Typescript', 'Sass', 'HTML', 'Figma'],
         url:'https://www.findink.co/'
     },

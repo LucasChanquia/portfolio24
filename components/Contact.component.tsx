@@ -14,14 +14,14 @@ export function Contact() {
     email: '',
     message: ''
   });
-  
+
   const validateName = (value: string) => value.match(/^[A-Za-z\s]{1,20}$/);
   const validateEmail = (value: string) => value.match(/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/);
   const validateMessage = (value: string) => value.match(/^[A-Za-z\s]{1,150}$/);
 
-  
+
   const isInvalidMail = useMemo(() => {
-    
+
     if (value.name === '') return false
 
     return validateEmail(value.email) ? false : true;
@@ -51,7 +51,7 @@ export function Contact() {
       <div>
         <div className="flex flex-col items-center justify-center p-5">
           <p className="text-center text-xl pl-4 md:pt-5">
-           { `Do you have any questions, ideas, or projects in mind? Don't hesitate to get in touch with me. I look forward to having the opportunity to collaborate with you and create something amazing!`}
+            {`Do you have any questions, ideas, or projects in mind? Don't hesitate to get in touch with me. I look forward to having the opportunity to collaborate with you and create something amazing!`}
           </p>
           <h2 className={`${title({ color: "blue" })} ${comfortaa.className} text-[20px] pt-2`} >
             Contact me!
@@ -104,8 +104,9 @@ export function Contact() {
                 isInvalid={isInvalidMessage}
                 color={isInvalidMessage ? "danger" : "default"}
                 errorMessage={isInvalidMessage && "You can only enter 150 characters"}
-                className="w-full"
+                className="flex w-full md:w-[80%] md:mx-auto"
                 onValueChange={(message) => setValue({ ...value, message })}
+
               />
 
             </div>
@@ -119,10 +120,14 @@ export function Contact() {
         </div>
         <div>
           <p className='text-center pb-[20px]'>Or</p>
-          <Button as={Link} href="https://wa.me/5493515118325/?text=Hola!%20Vi%20tu%20portfolio%20y%20estoy%20interesado%20en%20conectar%20contigo" color='success' target='_blank' className='flex w-[200px] mx-auto'>
-            Whatsapp 
-            <i className='fi fi-brands-whatsapp'></i>
-          </Button>
+          <div className='flex gap-4 justify-center'>
+            <Button as={Link} href="https://wa.me/5493515118325/?text=Hola!%20Vi%20tu%20portfolio%20y%20estoy%20interesado%20en%20conectar%20contigo" color='success' target='_blank' radius='full'>
+              <i className='fi fi-brands-whatsapp'></i>
+            </Button>
+            <Button as={Link} href="https://www.t.me/lucasChanquia" color='primary' target='_blank' radius='full'>
+              <i className='fi fi-brands-telegram'></i>
+            </Button>
+          </div>
         </div>
       </div>
     </>

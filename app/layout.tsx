@@ -41,7 +41,7 @@ export default function RootLayout({
 							{children}
 						</main>
 						<footer className="w-full flex items-center justify-center pt-5 pb-2">
-							<p>Lucas Chanquía © 2024</p>
+							<p> © 2024 Copyright <span>Lucas Chanquía</span></p>
 						</footer>
 					</div>
 				</Providers>

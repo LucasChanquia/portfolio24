@@ -113,7 +113,7 @@ export function Contact() {
 
             <div className="flex items-center justify-center w-full">
               <Button type='submit' color='secondary' isDisabled={isInvalidMail || isInvalidName || isInvalidMessage} >
-                Submit
+                Send
               </Button>
             </div>
           </form>

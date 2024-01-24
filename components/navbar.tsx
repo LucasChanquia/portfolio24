@@ -58,18 +58,18 @@ export default function NavbarApp() {
 					</NavbarContent>
 					<NavbarMenu className="z-[500]">
 						<NavbarItem isActive={activeLink === 'home'}>
-							<Link color={activeLink === 'home' ? 'secondary' : "foreground"} href="#" onClick={() => { setActiveLink("home"); setIsMenuOpen(false) }}>
+							<Link color={activeLink === 'home' ? 'secondary' : "foreground"} href="#" onClick={() => { setActiveLink("home"); setIsMenuOpen(false)}} >
 								Home
 							</Link>
 						</NavbarItem>
 						<NavbarItem>
-							<Link color={activeLink === 'jobs' ? 'secondary' : "foreground"} href="#job" onClick={() => { setActiveLink("jobs"); setIsMenuOpen(false) }}>
+							<Link color={activeLink === 'jobs' ? 'secondary' : "foreground"} href="#job" onClick={() => { setActiveLink("jobs"); setIsMenuOpen(false)}}>
 								Jobs & Projects
 							</Link>
 						</NavbarItem>
 
 						<NavbarItem>
-							<Link color={activeLink === 'contact' ? 'secondary' : "foreground"} href="#contact" onClick={() => { setActiveLink("contact"); setIsMenuOpen(false) }}>
+							<Link color={activeLink === 'contact' ? 'secondary' : "foreground"} href="#contact" onClick={() => { setActiveLink("contact"); setIsMenuOpen(false)}}>
 								Contact
 							</Link>
 						</NavbarItem>

@@ -65,9 +65,9 @@ export default function Home() {
 
 							<br />
 							<span className={`${title({ color: "blue" })} ${shadow.className} text-[20px]`}>{`< About Me >`}</span>
-							<span className="text-[40px] text-violet-500">{`I´`}</span>
+							<span className="text-[40px] text-violet-500 pl-2">{`I´`}</span>
 							<span className="text-[18px] text-justify">am a front-end web development professional based in Córdoba, Argentina, with two years of industry experience. I love tackling complex challenges and continuously learning, especially when it comes to working in a team.<br /> As a freelancer, I strive to be responsible and responsive, always aiming to exceed expectations and provide creative and innovative solutions. I am committed to constant growth and delivering high-quality products.</span>
-							<span className={`${title({ color: "blue" })} ${shadow.className} text-[20px]`}>{`</ About Me >`}</span>
+							<span className={`${title({ color: "blue" })} ${shadow.className} text-[20px] pl-2`}>{`</ About Me >`}</span>
 						</div>
 						<div className="col-span-3 md:col-span-1 md:h-auto rounded-6 w-full mx-auto">
 							<Image src='/image/perfil/Vector.png' alt="Imagen de perfil" width={300} height={500} className='m-auto' />

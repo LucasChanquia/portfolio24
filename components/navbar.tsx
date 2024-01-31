@@ -36,12 +36,12 @@ export default function NavbarApp640() {
 
  		<NavbarContent justify="center">
  			<NavbarItem className="w-[24px] h-[24px]">
- 				<Link color="secondary" href="https:github.com/LucasChanquia" target="_blank">
+ 				<Link color="secondary" href="https://www.github.com/LucasChanquia" target="_blank">
  					<i className="fi fi-brands-github"></i>
  				</Link>
  			</NavbarItem>
  			<NavbarItem className="w-[24px] h-[24px]">
- 				<Link color="primary" href="https:www.linkedin.com/in/lucas-chanquia/" target="_blank">
+ 				<Link color="primary" href="https://www.linkedin.com/in/lucas-chanquia/" target="_blank">
  					<i className="fi fi-brands-linkedin"></i>
  				</Link>
  			</NavbarItem>
@@ -105,12 +105,12 @@ export default function NavbarApp640() {
  			</NavbarContent>
  			<NavbarContent justify="end">
  				<NavbarItem className="w-[24px] h-[24px]">
- 					<Link color="secondary" href="https:github.com/LucasChanquia" target="_blank">
+ 					<Link color="secondary" href="https://www.github.com/LucasChanquia" target="_blank">
  						<i className="fi fi-brands-github"></i>
  					</Link>
  				</NavbarItem>
  				<NavbarItem className="w-[24px] h-[24px]">
- 					<Link color="primary" href="https:www.linkedin.com/in/lucas-chanquia/" target="_blank">
+ 					<Link color="primary" href="https://www.linkedin.com/in/lucas-chanquia/" target="_blank">
  						<i className="fi fi-brands-linkedin"></i>
  					</Link>
  				</NavbarItem>

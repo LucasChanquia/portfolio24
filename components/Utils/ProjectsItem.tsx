@@ -2,7 +2,7 @@ export const projects = [
     {
         id: 1,
         name: 'Foccus',
-        image: ['/image/Foccus/uno.png', '/image/Foccus/dos.png', '/image/Foccus/tres.png'],
+        image: ['/image/Foccus/uno.webp', '/image/Foccus/dos.webp', '/image/Foccus/tres.webp'],
         description: '"Foccus" is the solution to meet the need for providing an e-commerce service for an optical store in the city of Rio Negro, Colombia. Additionally, the application has the capability to grant access to different roles, log in from various locations, and manage personnel directly from the same dashboard. Currently under construction.',
         skill: ['NextsJs', 'HTML', 'Sass', 'Typescript'],
         git: 'https://github.com/CodePartnersTeam/FOCCUS-web-app'
@@ -19,7 +19,7 @@ export const projects = [
     {
         id: 3,
         name: 'Livinng',
-        image: ['/image/Livinng/uno.png', '/image/Livinng/dos.png', '/image/Livinng/tres.png'],
+        image: ['/image/Livinng/uno.webp', '/image/Livinng/dos.webp', '/image/Livinng/tres.webp'],
         description:'Livinng is an app designed for accommodation search, offering customers the ability to suggest and negotiate prices with hosts. One of my notable achievements in building the application was designing a visually immersive environment for creating new accommodations and providing a comprehensive preview when modifications are desired. This includes real-time data to ensure that hosts can constantly monitor and display the most relevant information.',
         skill: ['NextJs', 'Javascript', 'Taildwind', 'HTML', 'Trello'],
         url:'https://livinng.co/',

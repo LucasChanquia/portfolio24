@@ -70,7 +70,7 @@ export default function Home() {
 							<span className={`${title({ color: "blue" })} ${shadow.className} text-[20px] pl-2`}>{`</ About Me >`}</span>
 						</div>
 						<div className="col-span-3 md:col-span-1 md:h-auto rounded-6 w-full mx-auto">
-							<Image src='/image/perfil/Vector.png' alt="Imagen de perfil" width={300} height={500} className='m-auto' />
+							<Image src='/image/perfil/Vector.webp' alt="Imagen de perfil" width={300} height={500} className='m-auto' />
 						</div>
 					</div>
 

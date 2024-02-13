@@ -4,7 +4,7 @@ export const projects = [
         name: 'Foccus',
         image: ['/image/Foccus/uno.webp', '/image/Foccus/dos.webp', '/image/Foccus/tres.webp'],
         description: '"Foccus" is the solution to meet the need for providing an e-commerce service for an optical store in the city of Rio Negro, Colombia. Additionally, the application has the capability to grant access to different roles, log in from various locations, and manage personnel directly from the same dashboard. Currently under construction.',
-        skill: ['NextsJs', 'HTML', 'Sass', 'Typescript'],
+        skill: ['NextJs', 'HTML', 'Sass', 'Typescript'],
         git: 'https://github.com/CodePartnersTeam/FOCCUS-web-app'
     },
     {

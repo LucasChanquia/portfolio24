@@ -21,7 +21,7 @@ export const projects = [
         name: 'Livinng',
         image: ['/image/Livinng/uno.webp', '/image/Livinng/dos.webp', '/image/Livinng/tres.webp'],
         description:'Livinng is an app designed for accommodation search, offering customers the ability to suggest and negotiate prices with hosts. One of my notable achievements in building the application was designing a visually immersive environment for creating new accommodations and providing a comprehensive preview when modifications are desired. This includes real-time data to ensure that hosts can constantly monitor and display the most relevant information.',
-        skill: ['NextJs', 'Javascript', 'Taildwind', 'HTML', 'Trello'],
+        skill: ['NextJs', 'Javascript', 'Tailwind', 'HTML', 'Trello'],
         url:'https://livinng.co/',
     },
 

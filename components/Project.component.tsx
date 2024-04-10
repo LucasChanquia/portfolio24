@@ -69,7 +69,7 @@ export function ProjectsCard({ id, name, image, description, skill, url, git }: 
 
     return (
         <div className="w-full h-auto">
-            <div className='md:grid md:grid-cols-5 w-full gap-1 px-[20px] py-5' >
+            <div className='md:grid md:grid-cols-6 w-full gap-1 px-[20px] py-5' >
                 <div className='md:col-span-3 gap-3 pb-5 md:pb-0 md:pr-5'>
                     <h3 className={`${title({ color: "cyan" })} ${ibm.className} text-center text-[25px]`}>{name}</h3>
                     <p className='text-justify leading-6 py-3'>{description}</p>
@@ -80,7 +80,7 @@ export function ProjectsCard({ id, name, image, description, skill, url, git }: 
 
                 </div>
 
-                <div className='md:col-span-2 max-w-[450px]'>
+                <div className='md:col-span-3 max-w-[450px] m-auto'>
                     <Slider {...settings}>
                         {image.map((imag, index) => (
                             <Image key={index} src={imag} alt={name} width={450} height={350} isZoomed className='w-full h-[250px]' />

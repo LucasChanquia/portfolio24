@@ -67,8 +67,8 @@ export function JobsCard({ id, name, image, description, skill, url }: CardProps
 
     return (
         <div className="w-full h-full ">
-            <div className='md:grid md:grid-cols-5 w-full gap-1 px-[20px] py-5 ' >
-                <div className='md:col-span-2 max-w-[450px] pr-5 md:pr-3'>
+            <div className='md:grid md:grid-cols-6 w-full gap-1 px-[20px] py-5 ' >
+                <div className='md:col-span-3 max-w-[450px] pr-5 md:pr-3 m-auto'>
                     <Slider {...settings}>
                         {image.map((imag, index) => (
 

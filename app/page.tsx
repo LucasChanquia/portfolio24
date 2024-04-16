@@ -15,6 +15,8 @@ import { Shadows_Into_Light } from 'next/font/google';
 import { Comfortaa } from 'next/font/google';
 import { Caveat } from 'next/font/google';
 import { Contact } from '@/components/Contact.component';
+import { Analytics } from '@vercel/analytics/react';
+
 
 const shadow = Shadows_Into_Light({ weight: '400', subsets: ['latin'] })
 const comfortaa = Comfortaa({ weight: '400', subsets: ['latin'] })
@@ -110,6 +112,7 @@ export default function Home() {
 					</article>
 				</article>
 			</section>
+			<Analytics />
 		</>
 	);
 }

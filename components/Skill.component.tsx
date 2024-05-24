@@ -145,8 +145,32 @@ const skill2 = [
 ];
 
 const Marquee = () => {
-  return (
-    <div className="overflow-hidden whitespace-nowrap pt-[20px]">
+
+  const isViewportSmall = () => {
+		if(typeof window !== 'undefined'){
+			return window.innerWidth < 640; 
+		}
+		return false
+	  };
+
+		  return (
+        <>
+        { isViewportSmall() ? (
+          <>
+          <div className="pt-[20px]">
+			  <div className="flex flex-wrap gap-3 justify-center">
+				{skill.map((e: any) => (
+				  <div key={e.id} className="mx-auto">
+					<Image src={e.name} alt={e.name} width={100} height={100} className="hover:scale-110 p-2" />
+				  </div>
+				))}
+			  </div>
+			</div>
+          </>
+          
+        ) : (
+          <>
+          <div className="overflow-hidden whitespace-nowrap pt-[20px]">
       <div className="inline-block animate-marquee">
         <div className="flex gap-[50px] h-[200px]">
           {skill1.map((e, index) => (
@@ -185,7 +209,13 @@ const Marquee = () => {
         </div>
       </div>
     </div>
-  );
+    </>
+        )
+      }
+      </>
+
+      )
+        
 };
 
 export default Marquee;

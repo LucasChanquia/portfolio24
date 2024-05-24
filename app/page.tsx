@@ -2,11 +2,11 @@
 
 import 'styles/styles.css'
 import { title } from "@/components/primitives";
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useLayoutEffect } from "react";
 import style from "../styles/pageStyles.module.css"
 import Image from "next/image";
-import Marquee, { skill } from "@/components/Skill.component";
+import Marquee from "@/components/Skill.component";
 import { JobsCard } from "@/components/Jobs.component";
 import { ProjectsCard } from '@/components/Project.component';
 import { jobs } from "@/components/Utils/JobsItem";
@@ -54,30 +54,8 @@ export default function Home() {
 		return () => clearInterval(intervalId);
 	}, []);
 
-	const isViewportSmall = () => {
-		if(typeof window !== 'undefined'){
-			return window.innerWidth < 640; 
-		}
-		return false
-	  };
+	
 	  
-	  const RenderContent = () => {
-		if (isViewportSmall()) {
-		  return (
-			<div className="pt-[20px]">
-			  <div className="flex flex-wrap gap-3 justify-center">
-				{skill.map((e: any) => (
-				  <div key={e.id} className="mx-auto">
-					<Image src={e.name} alt={e.name} width={100} height={100} className="hover:scale-110 p-2" />
-				  </div>
-				))}
-			  </div>
-			</div>
-		  );
-		} else {
-		  return <Marquee />;
-		}
-	  };
 
 	return (
 		<>
@@ -102,7 +80,7 @@ export default function Home() {
 						</div>
 					</div>
 
-					<RenderContent />
+					<Marquee />
 				</article> 
 
 				<article id='job' className='pt-[60px]'>

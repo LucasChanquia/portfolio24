@@ -11,10 +11,6 @@ const inter = Inter({ weight: '400', subsets: ['latin'] })
 export const metadata: Metadata = {
 	title: 'Lucas Chanquía ~ Portfolio',
 	description: 'About me, Jobs & Projects, Contact & Social media',
-	 themeColor: [
-	 	{ media: "(prefers-color-scheme: light)", color: "white" },
-	 	{ media: "(prefers-color-scheme: dark)", color: "black" },
-	 ],
 	icons: {
 		icon: "/Vector.ico",
 		shortcut: '/Vector.ico',

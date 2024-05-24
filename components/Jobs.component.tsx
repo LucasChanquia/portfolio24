@@ -8,20 +8,14 @@ import { Chip } from '@nextui-org/react'
 import Link from 'next/link'
 import { title } from './primitives'
 import { IBM_Plex_Mono } from 'next/font/google'
+import { CardProps } from '@/app/page'
 
 const ibm = IBM_Plex_Mono({ weight: '400', subsets: ['latin'] })
 
-type CardProps = {
-    id: number
-    name: string
-    image: string[]
-    description: string
-    skill: string[]
-    url?: string
-}
 
 
-export function JobsCard({ id, name, image, description, skill, url }: CardProps) {
+
+export function JobsCard({ name, image, description, skill, url, youtube, git }: CardProps) {
 
     const CustomPrevArrow = (props: any) => {
 
@@ -94,6 +88,8 @@ export function JobsCard({ id, name, image, description, skill, url }: CardProps
                     <h3 className={`${title({ color: "cyan" })} ${ibm.className} text-center text-[25px]`}>{name}</h3>
                     <p className='text-justify leading-6 py-3'>{description}</p>
                     {url && <Link href={url} color='secondary' target='_blank' className='flex pl-1 pt-2'><i className="fi fi-rr-site-browser"></i></Link>}
+                    {git && <Link href={git} color='secondary' target='_blank' className='flex pl-1 pt-2'><i className="fi fi-brands-github"></i></Link>}
+                    {youtube && <Link href={youtube} color='secondary' target='_blank' className='flex pl-1 pt-2'><i className="fi fi-brands-youtube"></i></Link>}
                 </div>
             </div >
 

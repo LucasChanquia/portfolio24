@@ -19,3 +19,37 @@ a {
     font-size: 20px !important;
 }
 
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@layer utilities {
+    .animate-marquee {
+        display: flex;
+        width: 200%;
+        animation: marquee 50s linear infinite;
+    }
+  }
+
+  @keyframes marquee2 {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+
+  }
+  
+  @layer utilities {
+      .animate-marquee2 {
+        display: flex;
+        width: 200%;
+          animation: marquee2 50s linear infinite;
+      }
+    }

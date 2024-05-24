@@ -2,11 +2,11 @@
 
 import 'styles/styles.css'
 import { title } from "@/components/primitives";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useLayoutEffect } from "react";
 import style from "../styles/pageStyles.module.css"
 import Image from "next/image";
-import { skill } from "@/components/Skill.component";
+import Marquee, { skill } from "@/components/Skill.component";
 import { JobsCard } from "@/components/Jobs.component";
 import { ProjectsCard } from '@/components/Project.component';
 import { jobs } from "@/components/Utils/JobsItem";
@@ -30,6 +30,7 @@ export type CardProps = {
 	skill: string[]
 	url?: string
 	git?: string
+	youtube?: string
 }
 
 
@@ -53,6 +54,30 @@ export default function Home() {
 		return () => clearInterval(intervalId);
 	}, []);
 
+	const isViewportSmall = () => {
+		if(typeof window !== 'undefined'){
+			return window.innerWidth < 640; 
+		}
+		return false
+	  };
+	  
+	  const RenderContent = () => {
+		if (isViewportSmall()) {
+		  return (
+			<div className="pt-[20px]">
+			  <div className="flex flex-wrap gap-3 justify-center">
+				{skill.map((e: any) => (
+				  <div key={e.id} className="mx-auto">
+					<Image src={e.name} alt={e.name} width={100} height={100} className="hover:scale-110 p-2" />
+				  </div>
+				))}
+			  </div>
+			</div>
+		  );
+		} else {
+		  return <Marquee />;
+		}
+	  };
 
 	return (
 		<>
@@ -77,23 +102,15 @@ export default function Home() {
 						</div>
 					</div>
 
-					<div className="pt-[20px]">
-						<div className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-8 gap-3 justify-center">
-							{skill.map((e: any) => (
-								<div key={e.id} className="mx-auto">
-									<Image src={e.name} alt={e.name} width={100} height={100} className=" hover:scale-110 p-2" />
-								</div>
-							))}
-						</div>
-					</div>
-				</article>
+					<RenderContent />
+				</article> 
 
 				<article id='job' className='pt-[60px]'>
 					<div className='w-full h-full pb-[20px] border-b border-b-violet-700'>
 						<h3 className={`${title({ color: "blue" })} ${comfortaa.className} text-[30px] pl-[20px]`}>{`< Jobs />`}</h3>
 						<article className='w-full'>
-							{jobs.map(({ id, name, image, description, skill, url }: CardProps) => (
-								<JobsCard key={id} id={id} name={name} image={image} description={description} skill={skill} url={url} />
+							{jobs.map(({ id, name, image, description, skill, url, youtube, git }: CardProps) => (
+								<JobsCard key={id} id={id} name={name} image={image} description={description} skill={skill} url={url} youtube={youtube} git={git}/>
 							))}
 						</article>
 					</div>

@@ -66,7 +66,7 @@ export default function Home() {
 							<h1 className={title()}>{showTitle}</h1>
 							<br />
 							<br />
-							<h2 className={`${title({ color: "violet" })} ${caveat.className} ${style.fadeIn}`}>Front End developer & designer</h2>
+							<h2 className={`${title({ color: "violet" })} ${caveat.className} ${style.fadeIn}`}>Frontend developer</h2>
 
 							<br />
 							<span className={`${title({ color: "blue" })} ${shadow.className} text-[20px]`}>{`< About Me >`}</span>

@@ -158,7 +158,7 @@ export default function NavbarApp() {
           <NavbarItem>
             <Link
               color={activeLink === "contact" ? "secondary" : "foreground"}
-              href="#contact"
+              href="/#contact"
               onClick={() => {
                 setActiveLink("contact");
                 setIsMenuOpen(false);

@@ -29,7 +29,7 @@ export default function Home() {
   return (
     <>
       <section className="w-full h-full">
-        <article className="mb-2">
+        <article className="mb-4">
           <div className="lg:flex justify-center m-auto lg:gap-3 w-full max-w-[80%] ">
             <div className="flex flex-col">
               <div className="bg-slate-800 rounded-md p-5 my-2 h-max sm:flex justify-between gap-2">

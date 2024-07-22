@@ -50,7 +50,7 @@ export default function Projects () {
                             height={600}
                             className="w-[50%] m-auto mt-2 rounded-md aspect-video"
                           />
-                          <div className="absolute right-2 bottom-2 flex gap-3">
+                          <div className="absolute right-2 bottom-2">
                             {url && (
                               <Link
                                 href={url}

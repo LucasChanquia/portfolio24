@@ -1,3 +1,4 @@
+
 import "@/styles/globals.css";
 import { Metadata } from "next";
 import { Providers } from "./providers";
@@ -5,18 +6,18 @@ import NavbarApp from "@/components/navbar";
 import clsx from "clsx";
 import { Inter } from "next/font/google";
 
-const inter = Inter({ weight: '400', subsets: ['latin'] })
+const inter = Inter({ weight: '200', subsets: ['latin'] })
   
   
-export const metadata: Metadata = {
-	title: 'Lucas Chanquía ~ Portfolio',
-	description: 'About me, Jobs & Projects, Contact & Social media',
-	icons: {
-		icon: "/Vector.ico",
-		shortcut: '/Vector.ico',
-		apple: '/Vector.ico'
-	},
-};
+ export const metadata: Metadata = {
+ 	title: 'Lucas Chanquía ~ Portfolio',
+ 	description: 'About me, Jobs & Projects, Contact & Social media',
+ 	icons: {
+ 		icon: "/Vector.ico",
+ 		shortcut: '/Vector.ico',
+ 		apple: '/Vector.ico'
+ 	},
+ };
 
 export default function RootLayout({
 	children,
@@ -28,13 +29,16 @@ export default function RootLayout({
 			<head />
 			<body
 				className={clsx(
-					"min-h-screen bg-background font-sans antialiased",
+					"min-h-screen bg-background antialiased",
 					inter.className
 				)}
 			>
 				<Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
 					<div className="relative flex flex-col">
+						
 						<NavbarApp />
+						
+						
 						<main className="container mx-auto max-w-7xl pt-8 px-6 flex-grow">
 							{children}
 						</main>

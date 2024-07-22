@@ -1,129 +1,176 @@
-'use client'
+"use client";
+
 import React from "react";
-import { Navbar, NavbarContent, NavbarItem, Link, NavbarMenuToggle, Button, NavbarMenu, NavbarBrand } from "@nextui-org/react";
+import {
+  Navbar,
+  NavbarContent,
+  NavbarItem,
+  Link,
+  NavbarMenuToggle,
+  Button,
+  NavbarMenu,
+  NavbarBrand,
+} from "@nextui-org/react";
 import { ThemeSwitch } from "./theme-switch";
-import { useMediaQuery } from "react-responsive";
 
 
-export default function NavbarApp640() {
-	const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-	const [activeLink, setActiveLink] = React.useState('home')
-	const isMediumScreen = useMediaQuery({ maxWidth: 640 });
+export default function NavbarApp() {
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [activeLink, setActiveLink] = React.useState("home");
 
-	const handleDownload = () => {
-		const fileName = "Resume-LucasChanquia.pdf";
-		const fileUrl = `/${fileName}`;
+  return (
+    <>
+      <Navbar isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen} isBordered  className="z-[100]">
+        <NavbarContent className="sm:hidden" justify="start">
+          
+          <NavbarMenuToggle />
+        
+        </NavbarContent>
 
-		const link = document.createElement("a");
-		link.href = fileUrl;
-		link.download = fileName;
-		document.body.appendChild(link);
-		link.click();
-		document.body.removeChild(link);
-	};
+        <NavbarContent className="hidden sm:flex gap-4" justify="start">
 
-	return (
-		<>
-			
-			{isMediumScreen ? (
- 	<Navbar onMenuOpenChange={setIsMenuOpen} isMenuOpen={isMenuOpen} className="z-[500]" isBordered>
- 		<NavbarContent>
- 			<NavbarMenuToggle
- 				aria-label={isMenuOpen ? "Close menu" : "Open menu"}
- 				className="sm:hidden"
- 			/>
- 		</NavbarContent>
+        </NavbarContent>
 
- 		<NavbarContent justify="center">
- 			<NavbarItem className="w-[24px] h-[24px]">
- 				<Link color="secondary" href="https://www.github.com/LucasChanquia" target="_blank">
- 					<i className="fi fi-brands-github"></i>
- 				</Link>
- 			</NavbarItem>
- 			<NavbarItem className="w-[24px] h-[24px]">
- 				<Link color="primary" href="https://www.linkedin.com/in/lucas-chanquia/" target="_blank">
- 					<i className="fi fi-brands-linkedin"></i>
- 				</Link>
- 			</NavbarItem>
- 			<ThemeSwitch />
- 		</NavbarContent>
+        <NavbarContent className="sm:hidden" justify="center">
+          <NavbarItem className="w-[24px] h-[24px]">
+            <Link
+              color="secondary"
+              href="https://www.github.com/LucasChanquia"
+              target="_blank"
+            >
+              <i className="fi fi-brands-github"></i>
+            </Link>
+          </NavbarItem>
+          <NavbarItem className="w-[24px] h-[24px]">
+            <Link
+              color="primary"
+              href="https://www.linkedin.com/in/lucas-chanquia/"
+              target="_blank"
+            >
+              <i className="fi fi-brands-linkedin"></i>
+            </Link>
+          </NavbarItem>
+          {/* <ThemeSwitch /> */}
+        </NavbarContent>
 
- 		<NavbarContent justify="end">
- 			<NavbarItem>
- 				<Button as={Link} color="primary" href="#" variant="flat" onClick={handleDownload}>
- 					<i className="fi fi-rr-file-download"></i>
- 					CV
- 				</Button>
- 			</NavbarItem>
- 		</NavbarContent>
- 		<NavbarMenu className="z-[500]">
- 			<NavbarItem isActive={activeLink === 'home'}>
- 				<Link color={activeLink === 'home' ? 'secondary' : "foreground"} href="#" onClick={() => { setActiveLink("home"); setIsMenuOpen(false) }} >
- 					Home
- 				</Link>
- 			</NavbarItem>
- 			<NavbarItem>
- 				<Link color={activeLink === 'jobs' ? 'secondary' : "foreground"} href="#job" onClick={() => { setActiveLink("jobs"); setIsMenuOpen(false) }}>
- 					Jobs & Projects
- 				</Link>
- 			</NavbarItem>
+        <NavbarContent className="hidden sm:flex gap-4" justify="center">
+          <NavbarItem isActive={activeLink === "home"}>
+            <Link
+              color={activeLink === "home" ? "secondary" : "foreground"}
+              href="/"
+              onClick={() => setActiveLink("home")}
+            >
+              Home
+            </Link>
+          </NavbarItem>
+          <NavbarItem>
+            <Link
+              color={activeLink === "jobs" ? "secondary" : "foreground"}
+              href="/jobs"
+              onClick={() => setActiveLink("jobs")}
+            >
+              Jobs
+            </Link>
+          </NavbarItem>
 
- 			<NavbarItem>
- 				<Link color={activeLink === 'contact' ? 'secondary' : "foreground"} href="#contact" onClick={() => { setActiveLink("contact"); setIsMenuOpen(false) }}>
- 					Contact
- 				</Link>
- 			</NavbarItem>
+          <NavbarItem>
+            <Link
+              color={activeLink === "projects" ? "secondary" : "foreground"}
+              href="/projects"
+              onClick={() => setActiveLink("projects")}
+            >
+             Projects
+            </Link>
+          </NavbarItem>
 
- 		</NavbarMenu>
- 	</Navbar>
- ) : (
- 	<Navbar isBlurred maxWidth='full' className="z-[100]">
- 		<NavbarContent>
- 			<NavbarBrand>
- 				<Button as={Link} color="primary" href="#" variant="flat" onClick={handleDownload}>
- 					<i className="fi fi-rr-file-download"></i>
- 					CV
- 				</Button>
- 			</NavbarBrand>
- 			<NavbarContent justify="center">
- 				<NavbarItem isActive={activeLink === 'home'}>
- 					<Link color={activeLink === 'home' ? 'secondary' : "foreground"} href="#" onClick={() => setActiveLink("home")}>
- 						Home
- 					</Link>
- 				</NavbarItem>
- 				<NavbarItem>
- 					<Link color={activeLink === 'jobs' ? 'secondary' : "foreground"} href="#job" onClick={() => setActiveLink("jobs")}>
- 						Jobs & Projects
- 					</Link>
- 				</NavbarItem>
+          <NavbarItem>
+            <Link
+              color={activeLink === "contact" ? "secondary" : "foreground"}
+              href="/#contact"
+              onClick={() => setActiveLink("contact")}
+            >
+              Contact
+            </Link>
+          </NavbarItem>
+        </NavbarContent>
 
- 				<NavbarItem>
- 					<Link color={activeLink === 'contact' ? 'secondary' : "foreground"} href="#contact" onClick={() => setActiveLink("contact")}>
- 						Contact
- 					</Link>
- 				</NavbarItem>
- 			</NavbarContent>
- 			<NavbarContent justify="end">
- 				<NavbarItem className="w-[24px] h-[24px]">
- 					<Link color="secondary" href="https://www.github.com/LucasChanquia" target="_blank">
- 						<i className="fi fi-brands-github"></i>
- 					</Link>
- 				</NavbarItem>
- 				<NavbarItem className="w-[24px] h-[24px]">
- 					<Link color="primary" href="https://www.linkedin.com/in/lucas-chanquia/" target="_blank">
- 						<i className="fi fi-brands-linkedin"></i>
- 					</Link>
- 				</NavbarItem>
- 				<ThemeSwitch />
- 			</NavbarContent>
- 		</NavbarContent>
- 	</Navbar>
- )}
+        <NavbarContent className="hidden sm:flex gap-4" justify="end">
+          <NavbarItem className="w-[24px] h-[24px]">
+            <Link
+              color="secondary"
+              href="https://www.github.com/LucasChanquia"
+              target="_blank"
+            >
+              <i className="fi fi-brands-github"></i>
+            </Link>
+          </NavbarItem>
+          <NavbarItem className="w-[24px] h-[24px]">
+            <Link
+              color="primary"
+              href="https://www.linkedin.com/in/lucas-chanquia/"
+              target="_blank"
+            >
+              <i className="fi fi-brands-linkedin"></i>
+            </Link>
+          </NavbarItem>
+          {/* <ThemeSwitch /> */}
+        </NavbarContent>
 
-		</>
-	)
+        <NavbarMenu>
+          <NavbarItem isActive={activeLink === "home"}>
+            <Link
+              color={activeLink === "home" ? "secondary" : "foreground"}
+              href="/"
+              onClick={() => {
+                setActiveLink("home");
+                setIsMenuOpen(false);
+              }}
+            >
+              Home
+            </Link>
+          </NavbarItem>
+          <NavbarItem>
+            <Link
+              color={activeLink === "jobs" ? "secondary" : "foreground"}
+              href="/jobs"
+              onClick={() => {
+                setActiveLink("jobs");
+                setIsMenuOpen(false);
+              }}
+            >
+              Jobs
+            </Link>
+          </NavbarItem>
+
+          <NavbarItem>
+            <Link
+              color={activeLink === "projects" ? "secondary" : "foreground"}
+              href="/projects"
+              onClick={() => {
+                setActiveLink("projects");
+                setIsMenuOpen(false);
+              }}
+            >
+              Projects
+            </Link>
+          </NavbarItem>
+
+          <NavbarItem>
+            <Link
+              color={activeLink === "contact" ? "secondary" : "foreground"}
+              href="#contact"
+              onClick={() => {
+                setActiveLink("contact");
+                setIsMenuOpen(false);
+              }}
+            >
+              Contact
+            </Link>
+          </NavbarItem>
+        </NavbarMenu>
+      </Navbar>
+
+    
+    </>
+  );
 }
-
-
-
- 

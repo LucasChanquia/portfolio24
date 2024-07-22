@@ -1,4 +1,13 @@
 export const projects = [
+    {
+        id: 1,
+        name: 'Raspadita App',
+        image: ['/image/Raspadita/raspadita1.png'],
+        description: 'Raspadita app is a game designed to announce a pregnancy to family members or loved ones through a square that must be scratched with a finger or mouse to reveal the message that you will be an uncle/aunt.',
+        skill: ['Typescript', 'Next','Tailwind', 'LocalStore'],
+        url: 'http://raspadita-app.vercel.app/',
+        git: 'https://github.com/LucasChanquia/raspadita-app'
+    },
 
     {
         id: 2,

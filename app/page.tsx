@@ -30,7 +30,7 @@ export default function Home() {
     <>
       <section className="w-full h-full">
         <article className="mb-4">
-          <div className="lg:flex justify-center m-auto lg:gap-3 w-full max-w-[80%] ">
+          <div className="lg:flex justify-center m-auto lg:gap-3 w-full sm:max-w-[80%] ">
             <div className="flex flex-col">
               <div className="bg-slate-800 rounded-md p-5 my-2 h-max sm:flex justify-between gap-2">
                 <div className="w-auto m-auto">
@@ -144,7 +144,7 @@ export default function Home() {
           </div>
         </article>
 
-        <article className="sm:flex max-w-[80%] justify-center m-auto my-2 gap-3">
+        <article className="sm:flex sm:max-w-[80%] justify-center m-auto my-2 gap-3">
           <div className="bg-slate-800 rounded-md my-3 sm:my-0 w-full h-[80px] flex items-center">
             <Button
               as={Link}
@@ -177,7 +177,7 @@ export default function Home() {
 
         <article
           id="contact"
-          className="max-w-[80%] w-full flex m-auto sm:my-4"
+          className="sm:max-w-[80%] w-full flex m-auto sm:my-4"
         >
           <Contact />
         </article>

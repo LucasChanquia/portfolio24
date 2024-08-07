@@ -14,8 +14,19 @@ import msql from "/public/svg/mysql.svg";
 import next from "/public/svg/next.svg";
 import java from "/public/svg/java.svg"
 import spring from "/public/svg/spring.svg"
+import vue from "/public/svg/vue.svg"
 
 export const skill = [
+  {
+    id: 4,
+    name: html,
+    skill: 'HTML'
+  },
+  {
+    id: 5,
+    name: css,
+    skill: 'CSS'
+  },
     {
       id: 1,
       name: javascript,
@@ -27,20 +38,26 @@ export const skill = [
       skill: 'Typescript'
     },
     {
+      id: 9,
+      name: react,
+      skill: 'React'
+    },
+    {
       id: 3,
       name: next,
-      skill: 'Next'
+      skill: 'NextJs'
     },
     {
-      id: 4,
-      name: html,
-      skill: 'HTML'
+      id: 14,
+      name: vite,
+      skill: 'Vite'
     },
     {
-      id: 5,
-      name: css,
-      skill: 'CSS'
+      id:17,
+      name: vue,
+      skill: 'VueJs'
     },
+    
     {
       id: 6,
       name: figma,
@@ -56,11 +73,7 @@ export const skill = [
       name: sass,
       skill: 'Sass'
     },
-    {
-      id: 9,
-      name: react,
-      skill: 'React'
-    },
+   
     {
       id: 10,
       name: node,
@@ -81,11 +94,7 @@ export const skill = [
       name: php,
       skill: 'PHP'
     },
-    {
-      id: 14,
-      name: vite,
-      skill: 'Vite'
-    },
+    
     {
       id: 15,
       name: java,
@@ -95,5 +104,6 @@ export const skill = [
       id: 16,
       name: spring,
       skill: 'Spring Boot'
-    }
+    },
+    
   ];

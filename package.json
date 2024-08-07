@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@flaticon/flaticon-uicons": "^3.1.0",
+    "@github/typing-effect-element": "^0.1.0",
     "@nextui-org/button": "2.0.26",
     "@nextui-org/code": "2.0.24",
     "@nextui-org/input": "2.1.16",
@@ -43,7 +44,8 @@
     "slick-carousel": "^1.8.1",
     "tailwind-variants": "^0.1.18",
     "tailwindcss": "3.3.5",
-    "typescript": "5.0.4"
+    "typescript": "5.0.4",
+    "zustand": "^4.5.4"
   },
   "devDependencies": {
     "@types/react-slick": "^0.23.13"

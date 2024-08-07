@@ -15,7 +15,7 @@ const Skills = () => {
                 height={80}
                 className="hover:scale-110 p-2 w-[50px] h-[50px] sm:w-[80px] sm:h-[80px] m-auto"
               />
-              <span className={`flex justify-center text-[12px] sm:text-[18px]`}>{skill}</span>
+              <span className={`flex justify-center text-[12px] sm:text-[16px]`}>{skill}</span>
             </div>
           ))}
         </div>

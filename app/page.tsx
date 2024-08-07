@@ -10,10 +10,14 @@ import { Analytics } from "@vercel/analytics/react";
 import { Button } from "@nextui-org/button";
 import Link from "next/link";
 import { Chip } from "@nextui-org/react";
+import "@github/typing-effect-element";
+import { useStore } from "@/store/store";
 
 const shadow = Shadows_Into_Light({ weight: "400", subsets: ["latin"] });
 
 export default function Home() {
+  const {setActiveLink} = useStore()
+
   const handleDownload = () => {
     const fileName = "Resume-LucasChanquia.pdf";
     const fileUrl = `/${fileName}`;
@@ -29,7 +33,7 @@ export default function Home() {
   return (
     <>
       <section className="w-full h-full">
-        <article className="mb-4">
+        <article className="mb-2">
           <div className="lg:flex justify-center m-auto lg:gap-3 w-full md:max-w-[80%] ">
             <div className="flex flex-col">
               <div className="bg-slate-800 rounded-md p-5 my-2 h-max sm:flex justify-between gap-2">
@@ -44,30 +48,51 @@ export default function Home() {
                 </div>
                 <div className="flex flex-col w-full gap-2 sm:justify-between sm:m-auto">
                   <div className="mb-[-15px]">
-                    <h1 className="text-[20px] text-center">{`I'm Lucas Chanquía`}</h1>
+                    <h1 className="text-[20px] text-center pb-3">{`I'm Lucas Chanquía`}</h1>
                   </div>
                   <div>
                     <h2 className="text-center">
-                      Frontend <span>developer</span>
+                      <typing-effect data-lines='["Full Stack Developer"]'>
+                        <span data-target="typing-effect.content"></span>
+                        <span data-target="typing-effect.cursor">|</span>
+                      </typing-effect>
                     </h2>
                   </div>
                   <div className="flex gap-2 flex-wrap justify-center pb-3 mt-5 sm:mt-0">
                     <Chip variant="shadow" color="default" radius="sm">
-                      <div className="flex gap-1 items-center">
+                      <div className="flex gap-1 items-center text-[16px]">
                         <i className="fi fi-rr-marker"> </i>Argentina
                       </div>
                     </Chip>
 
                     <Chip variant="shadow" color="default" radius="sm">
-                      <div className="flex gap-1 items-center">
+                      <Link
+                        color="primary"
+                        href="https://www.linkedin.com/in/lucas-chanquia/"
+                        target="_blank"
+                      >
+                        <div className="flex gap-1 items-center text-[16px]">
+                          <i className="fi fi-brands-linkedin"></i>Linkedin
+                        </div>
+                      </Link>
+                      {/* <div className="flex gap-1 items-center text-[16px]">
                         <i className="fi fi-brands-java"></i>Autodidact
-                      </div>
+                      </div> */}
                     </Chip>
 
                     <Chip variant="shadow" color="default" radius="sm">
-                      <div className="flex gap-1 items-center">
+                      <Link
+                        color="secondary"
+                        href="https://www.github.com/LucasChanquia"
+                        target="_blank"
+                      >
+                        <div className="flex gap-1 items-center text-[16px]">
+                          <i className="fi fi-brands-github"></i>Github
+                        </div>
+                      </Link>
+                      {/* <div className="flex gap-1 items-center text-[16px]">
                         <i className="fi fi-rr-graduation-cap"></i>Bootcamp
-                      </div>
+                      </div> */}
                     </Chip>
                   </div>
 
@@ -101,7 +126,7 @@ export default function Home() {
                       onClick={handleDownload}
                     >
                       <i className="fi fi-rr-file-download"></i>
-                      Download CV
+                      CV
                     </Button>
                   </div>
                 </div>
@@ -113,15 +138,15 @@ export default function Home() {
                   } text-[20px]`}
                 >{`< About Me >`}</span>
                 {/* <br /> */}
-                <div className="bg-slate-700 rounded-md p-2">
+                <div className="bg-slate-700 rounded-md py-2 px-3">
                   <span className="text-[25px] sm:text-[40px] text-violet-600 px-3 ">{`I`}</span>
-                  <span className="text-[12px] sm:text-[18px]">
-                    am a front-end web development professional based in
-                    Córdoba, Argentina, with two years of industry experience. I
-                    enjoy tackling complex challenges, continuously learning,
-                    and adapting to the latest technological trends, especially
-                    when working in a team.
-                    <br /> As a freelancer, I aim to be responsible and
+                  <span className="text-[12px] sm:text-[16px] ">
+                    am a fullstack web development apasionated based in Córdoba,
+                    Argentina, with two years of industry experience. I enjoy
+                    tackling complex challenges, continuously learning, and
+                    adapting to the latest technological trends, especially when
+                    working in a team.
+                    <br /> As a professional, I aim to be responsible and
                     responsive, always striving to exceed expectations and
                     provide innovative solutions. I am committed to constant
                     growth and delivering high-quality services.
@@ -145,34 +170,32 @@ export default function Home() {
         </article>
 
         <article className="sm:flex md:max-w-[80%] justify-center m-auto my-2 gap-3">
-          <div className="bg-slate-800 rounded-md my-3 sm:my-0 w-full h-[80px] flex items-center">
-            <Button
-              as={Link}
-              href="/jobs"
-              color="default"
-              variant="solid"
-              radius="none"
-              className="bg-transparent"
-            >
-              <h2 className="text-[25px] text-center flex gap-5 items-center">
-                Jobs <i className="fi fi-br-arrow-up-right"></i>
-              </h2>
-            </Button>
-          </div>
-          <div className="bg-slate-800 rounded-md my-3 sm:my-0 w-full h-[80px] flex items-center">
-            <Button
-              as={Link}
-              href="/projects"
-              color="default"
-              variant="solid"
-              radius="none"
-              className="bg-transparent"
-            >
-              <h2 className="text-[25px] text-right flex gap-5 items-center">
-                Projects <i className="fi fi-br-arrow-up-right"></i>
-              </h2>
-            </Button>
-          </div>
+          <Button
+            as={Link}
+            href="/jobs"
+            color="default"
+            variant="solid"
+            radius="none"
+            onClick={()=>{setActiveLink("jobs")}}
+            className="bg-slate-800 rounded-md my-3 sm:my-0 w-full h-[80px] flex items-center"
+          >
+            <h2 className="text-[25px] text-center flex gap-5 items-center">
+              Jobs <i className="fi fi-br-arrow-up-right"></i>
+            </h2>
+          </Button>
+          <Button
+            as={Link}
+            href="/projects"
+            color="default"
+            variant="solid"
+            radius="none"
+            onClick={()=>{setActiveLink("projects")}}
+            className="bg-slate-800 rounded-md my-3 sm:my-0 w-full h-[80px] flex items-center"
+          >
+            <h2 className="text-[25px] text-right flex gap-5 items-center">
+              Projects <i className="fi fi-br-arrow-up-right"></i>
+            </h2>
+          </Button>
         </article>
 
         <article

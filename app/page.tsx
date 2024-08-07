@@ -10,8 +10,8 @@ import { Analytics } from "@vercel/analytics/react";
 import { Button } from "@nextui-org/button";
 import Link from "next/link";
 import { Chip } from "@nextui-org/react";
-import "@github/typing-effect-element";
 import { useStore } from "@/store/store";
+import { useEffect } from "react";
 
 const shadow = Shadows_Into_Light({ weight: "400", subsets: ["latin"] });
 
@@ -29,6 +29,10 @@ export default function Home() {
     link.click();
     document.body.removeChild(link);
   };
+
+  useEffect(() => {
+    import("@github/typing-effect-element");
+  }, []);
 
   return (
     <>
@@ -52,7 +56,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h2 className="text-center">
-                      <typing-effect data-lines='["Full Stack Developer"]'>
+                       <typing-effect data-lines='["Full Stack Developer"]'>
                         <span data-target="typing-effect.content"></span>
                         <span data-target="typing-effect.cursor">|</span>
                       </typing-effect>

@@ -61,7 +61,7 @@ export default function Projects() {
                           height={600}
                           className="w-full md:w-[80%] m-auto mt-2 rounded-md aspect-video"
                         />
-                        <div className="absolute right-2 bottom-2">
+                        <div className="absolute right-2 bottom-4">
                           {url && (
                             <Link
                               href={url}
@@ -82,7 +82,7 @@ export default function Projects() {
                               className="flex pl-1 pt-2"
                             >
                               <Tooltip content="Github">
-                                <i className="fi fi-brands-github"></i>
+                                <i className="fi fi-brands-github text-gray-500"></i>
                               </Tooltip>
                             </Link>
                           )}

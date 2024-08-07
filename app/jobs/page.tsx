@@ -68,7 +68,7 @@ export default function Jobs() {
                           height={600}
                           className=" w-full md:w-[80%] m-auto mt-2 rounded-md aspect-video"
                         />
-                        <div className="absolute right-2 bottom-2">
+                        <div className="absolute right-2 bottom-4">
                           {url && (
                             <Link
                               href={url}

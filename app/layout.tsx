@@ -11,7 +11,7 @@ const inter = Inter({ weight: '200', subsets: ['latin'] })
   
  export const metadata: Metadata = {
  	title: 'Lucas Chanquía ~ Portfolio',
- 	description: 'About me, Jobs & Projects, Contact & Social media',
+ 	description: 'Sobre mi, Trabajos & Proyectos, Contacto & Redes sociales',
  	icons: {
  		icon: "/Vector.ico",
  		shortcut: '/Vector.ico',
@@ -25,7 +25,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en" suppressHydrationWarning>
+		<html lang="es" suppressHydrationWarning>
 			<head />
 			<body
 				className={clsx(
@@ -43,7 +43,7 @@ export default function RootLayout({
 							{children}
 						</main>
 						<footer className="w-full flex items-center justify-center pt-5 pb-2">
-							<p> © 2024 Copyright <span>Lucas Chanquía</span></p>
+							<p> © 2025 Copyright <span>Lucas Chanquía</span></p>
 						</footer>
 					</div>
 				</Providers>

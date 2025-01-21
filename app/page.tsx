@@ -19,12 +19,12 @@ export default function Home() {
   const {setActiveLink} = useStore()
 
   const handleDownload = () => {
-    const fileName = "Resume-LucasChanquia.pdf";
+    const fileName = "LucasChanquia-CV.pdf";
     const fileUrl = `/${fileName}`;
 
     const link = document.createElement("a");
     link.href = fileUrl;
-    link.download = fileName;
+    link.target = "_blank"
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -52,11 +52,11 @@ export default function Home() {
                 </div>
                 <div className="flex flex-col w-full gap-2 sm:justify-between sm:m-auto">
                   <div className="mb-[-15px]">
-                    <h1 className="text-[20px] text-center pb-3">{`I'm Lucas Chanquía`}</h1>
+                    <h1 className="text-[20px] text-center pb-3">{`Lucas Chanquía`}</h1>
                   </div>
                   <div>
                     <h2 className="text-center">
-                       <typing-effect data-lines='["Full Stack Developer"]'>
+                       <typing-effect data-lines='["Desarrollador Full Stack"]'>
                         <span data-target="typing-effect.content"></span>
                         <span data-target="typing-effect.cursor">|</span>
                       </typing-effect>
@@ -140,20 +140,20 @@ export default function Home() {
                   className={`${title({ color: "blue" })} ${
                     shadow.className
                   } text-[20px]`}
-                >{`< About Me >`}</span>
+                >{`< Sobre mi >`}</span>
                 {/* <br /> */}
                 <div className="bg-slate-700 rounded-md py-2 px-3">
-                  <span className="text-[25px] sm:text-[40px] text-violet-600 px-3 ">{`I`}</span>
-                  <span className="text-[12px] sm:text-[16px] ">
-                    am a fullstack web development apasionated based in Córdoba,
-                    Argentina, with two years of industry experience. I enjoy
-                    tackling complex challenges, continuously learning, and
-                    adapting to the latest technological trends, especially when
-                    working in a team.
-                    <br /> As a professional, I aim to be responsible and
-                    responsive, always striving to exceed expectations and
-                    provide innovative solutions. I am committed to constant
-                    growth and delivering high-quality services.
+                  <span className="text-[25px] sm:text-[40px] text-violet-600 ">{`S`}</span>
+                  <span className="text-[12px] sm:text-[16px]">
+                    oy un apasionado del desarrollo web fullstack radicado en Córdoba,
+                    Argentina, con tres años de experiencia en el sector. disfruto
+                    abordar desafíos complejos, aprender continuamente y
+                    adaptarme a las últimas tendencias tecnológicas, especialmente 
+                    trabajando en equipo.
+                    <br /> Como profesional busco ser responsable y
+                    receptivo, esforzándose siempre por superar las expectativas y
+                    proporcionar soluciones innovadoras. Estoy comprometido al crecimiento constante
+                    y entrega de servicios de alta calidad.
                   </span>
                 </div>
               </div>
@@ -184,7 +184,7 @@ export default function Home() {
             className="bg-slate-800 rounded-md my-3 sm:my-0 w-full h-[80px] flex items-center"
           >
             <h2 className="text-[25px] text-center flex gap-5 items-center">
-              Jobs <i className="fi fi-br-arrow-up-right"></i>
+              Trabajos <i className="fi fi-br-arrow-up-right"></i>
             </h2>
           </Button>
           <Button
@@ -197,7 +197,7 @@ export default function Home() {
             className="bg-slate-800 rounded-md my-3 sm:my-0 w-full h-[80px] flex items-center"
           >
             <h2 className="text-[25px] text-right flex gap-5 items-center">
-              Projects <i className="fi fi-br-arrow-up-right"></i>
+              Proyectos <i className="fi fi-br-arrow-up-right"></i>
             </h2>
           </Button>
         </article>

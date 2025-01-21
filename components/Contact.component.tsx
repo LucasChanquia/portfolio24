@@ -4,9 +4,9 @@ import { useMemo, useState } from "react";
 import { Button, Textarea } from "@nextui-org/react";
 import { Shadows_Into_Light } from "next/font/google";
 import { title } from "@/components/primitives";
-import { Comfortaa } from "next/font/google";
+// import { Comfortaa } from "next/font/google";
 
-const comfortaa = Comfortaa({ weight: "400", subsets: ["latin"] });
+// const comfortaa = Comfortaa({ weight: "400", subsets: ["latin"] });
 const shadow = Shadows_Into_Light({ weight: "400", subsets: ["latin"] });
 
 export function Contact() {
@@ -48,20 +48,20 @@ export function Contact() {
           className={`${title({ color: "blue" })} ${
             shadow.className
           } text-[20px]`}
-        >{`< Contact >`}</span>
+        >{`< Contacto >`}</span>
 
         <div className="sm:grid sm:grid-cols-2 ">
           <div className="flex flex-col items-center justify-center p-2">
             <p className="text-center text-xl p-4 md:pt-5 bg-slate-700 rounded-md">
-              {`Do you have any questions, ideas, or projects in mind? Don't hesitate to get in touch with me. I look forward to having the opportunity to collaborate with you and create something amazing!`}
+              {`¿Tienes alguna pregunta, idea o proyecto en mente? No dudes en ponerte en contacto conmigo. ¡Espero tener la oportunidad de colaborar contigo y crear algo increíble!`}
             </p>
-            <h2
+            {/* <h2
               className={`${title({ color: "blue" })} ${
                 comfortaa.className
               } text-[20px] pt-2`}
             >
-              Contact me!
-            </h2>
+              Contactame!
+            </h2> */}
           </div>
           <div className="justify-center px-5 pb-5 ">
             <form
@@ -76,7 +76,7 @@ export function Contact() {
                   value={value.name}
                   type="text"
                   name="name"
-                  label="Name"
+                  label="Nombre"
                   variant="underlined"
                   isRequired
                   isInvalid={isInvalidName}
@@ -108,7 +108,7 @@ export function Contact() {
                   value={value.message}
                   isRequired
                   name="message"
-                  label="Message"
+                  label="Mensaje"
                   variant="bordered"
                   labelPlacement="outside"
                   isInvalid={isInvalidMessage}
@@ -130,7 +130,7 @@ export function Contact() {
                     isInvalidMail || isInvalidName || isInvalidMessage
                   }
                 >
-                  Send
+                  Enviar
                 </Button>
               </div>
             </form>

@@ -14,30 +14,31 @@ import {
 import { ThemeSwitch } from "./theme-switch";
 import { useStore } from "@/store/store";
 
-
 export default function NavbarApp() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const {activeLink, setActiveLink} = useStore()
+  const { activeLink, setActiveLink } = useStore();
   // const [activeLink, setActiveLink] = React.useState("home");
 
   return (
     <>
-      <Navbar isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen} isBordered  className="z-[100]">
+      <Navbar
+        isMenuOpen={isMenuOpen}
+        onMenuOpenChange={setIsMenuOpen}
+        isBordered
+        className="z-[100]"
+      >
         <NavbarContent className="sm:hidden" justify="start">
-          
           <NavbarMenuToggle />
-        
         </NavbarContent>
 
-        <NavbarContent className="hidden sm:flex gap-4" justify="start">
-
-        </NavbarContent>
+        <NavbarContent
+          className="hidden sm:flex gap-4"
+          justify="start"
+        ></NavbarContent>
 
         <NavbarContent className="sm:hidden" justify="center">
-          <NavbarItem className="w-[24px] h-[24px]">   
-          </NavbarItem>
-          <NavbarItem className="w-[24px] h-[24px]">
-          </NavbarItem>
+          <NavbarItem className="w-[24px] h-[24px]"></NavbarItem>
+          <NavbarItem className="w-[24px] h-[24px]"></NavbarItem>
           {/* <ThemeSwitch /> */}
         </NavbarContent>
 
@@ -48,7 +49,7 @@ export default function NavbarApp() {
               href="/"
               onClick={() => setActiveLink("home")}
             >
-              Home
+              Inicio
             </Link>
           </NavbarItem>
           <NavbarItem>
@@ -57,7 +58,7 @@ export default function NavbarApp() {
               href="/jobs"
               onClick={() => setActiveLink("jobs")}
             >
-              Jobs
+              Trabajos
             </Link>
           </NavbarItem>
 
@@ -67,7 +68,7 @@ export default function NavbarApp() {
               href="/projects"
               onClick={() => setActiveLink("projects")}
             >
-             Projects
+              Proyectos
             </Link>
           </NavbarItem>
 
@@ -77,7 +78,7 @@ export default function NavbarApp() {
               href="/#contact"
               onClick={() => setActiveLink("contact")}
             >
-              Contact
+              Contacto
             </Link>
           </NavbarItem>
         </NavbarContent>
@@ -114,7 +115,7 @@ export default function NavbarApp() {
                 setIsMenuOpen(false);
               }}
             >
-              Home
+              Inicio
             </Link>
           </NavbarItem>
           <NavbarItem>
@@ -126,7 +127,7 @@ export default function NavbarApp() {
                 setIsMenuOpen(false);
               }}
             >
-              Jobs
+              Trabajos
             </Link>
           </NavbarItem>
 
@@ -139,7 +140,7 @@ export default function NavbarApp() {
                 setIsMenuOpen(false);
               }}
             >
-              Projects
+              Proyectos
             </Link>
           </NavbarItem>
 
@@ -152,13 +153,11 @@ export default function NavbarApp() {
                 setIsMenuOpen(false);
               }}
             >
-              Contact
+              Contacto
             </Link>
           </NavbarItem>
         </NavbarMenu>
       </Navbar>
-
-    
     </>
   );
 }

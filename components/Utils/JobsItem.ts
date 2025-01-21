@@ -1,33 +1,41 @@
 export const jobs = [
     {
         id: 1,
+        name: 'Carva Arquitectura',
+        image: ['/image/Carva/Carva1.webp', '/image/Foccus/dos.webp', '/image/Foccus/tres.webp'],
+        description: 'Desarrollo de landing page de arquitectura, donde se utilizó el framework Astro para lograr un rendimiento de excelencia. Se integra calendario para agendar videollamadas a los clientes potenciales, además de un formulario exclusivo para contacto. 2024',
+        skill: ['Astro', 'Javascript', 'Tailwind'],
+        url: 'https://www.carvaarquitectura.com/'
+    },
+    {
+        id: 2,
         name: 'Foccus',
         image: ['/image/Foccus/uno.webp', '/image/Foccus/dos.webp', '/image/Foccus/tres.webp'],
-        description: '"Foccus" is the solution to meet the need for providing an e-commerce service for an optical store in the city of Rio Negro, Colombia. Additionally, the application has the capability to grant access to different roles, log in from various locations, and manage personnel directly from the same dashboard. Currently under construction. 2023 - present',
+        description: '"Foccus" es la solución para satisfacer la necesidad de brindar un servicio de comercio electrónico para una óptica de la ciudad de Río Negro, Colombia. Además, la aplicación tiene la capacidad de otorgar acceso a diferentes roles, iniciar sesión desde varias ubicaciones y administrar al personal directamente desde el mismo panel. Actualmente en construcción. 2023 - presente',
         skill: ['NextJs', 'Typescript', 'Sass', 'Storybook'],
         // git: 'https://github.com/CodePartnersTeam/FOCCUS-web-app'
     },
     {
-        id: 1,
+        id: 3,
         name: 'SETA',
         image: ['/image/SETA/uno.jpg', '/image/SETA/dos.jpg', '/image/SETA/tres.jpg', '/image/SETA/cuatro.jpg', '/image/SETA/cinco.jpg'],
-        description: 'SETA is a custom-made app for a car wash in Mar del Plata, Buenos Aires. In this project, my role was to handle all frontend production, emphasizing user experience. Relevant tasks included setting up filters for brand, model, and age of a vehicle, as well as creating a step-by-step order process when a vehicle enters the car wash, login, credential management, tariff modifications, among others. My greatest achievement was delivering a fully functional application, with error handling and 100% tested to minimize any chance of bugs. I am currently providing ongoing support to the system owners. 2023',
+        description: 'SETA es una app hecha a medida para un lavadero de autos en Mar del Plata, Buenos Aires. En este proyecto, mi función fue encargarme de toda la producción del frontend, enfatizando la experiencia del usuario. Las tareas relevantes incluyeron la configuración de filtros por marca, modelo y antigüedad de un vehículo, así como la creación de un proceso de pedido paso a paso cuando un vehículo ingresa al lavado, inicio de sesión, gestión de credenciales, modificaciones de tarifas, entre otras. Mi mayor logro fue entregar una aplicación completamente funcional, con manejo de errores y 100% testeada para minimizar cualquier posibilidad de errores. 2023',
         skill: ['NextJs', 'Typescript', 'Tailwind', 'Figma'],
         url: 'https://lavadero-demo.vercel.app/'
     },
     {
-        id: 2,
+        id: 4,
         name: 'Findink',
         image: ['/image/Findink/uno.webp', '/image/Findink/dos.webp', '/image/Findink/tres.webp', '/image/Findink/cuatro.webp'],
-        description:'Findink is a startup focused on connecting tattoo artists with clients. In the project, it was my responsibility to refactor the login (Login/register) and forgot password functionalities. These components were implemented with a validator for each input, resulting in a significant improvement in the user experience. 2023',
+        description:'Findink es una startup centrada en conectar tatuadores con clientes. Dentro de mis tareas principales, fue mi responsabilidad refactorizar las funcionalidades de inicio de sesión (Iniciar sesión/registrarse) y de contraseña olvidada. Estos componentes se implementaron con un validador para cada entrada, lo que resultó en una mejora significativa en la experiencia del usuario. 2023',
         skill: ['NextJs', 'Typescript', 'Sass', 'Figma'],
         url:'https://www.findink.co/'
     },
     {
-        id: 3,
+        id: 5,
         name: 'Livinng',
         image: ['/image/Livinng/uno.webp', '/image/Livinng/dos.webp', '/image/Livinng/tres.webp'],
-        description:'Livinng is an app designed for accommodation search, offering customers the ability to suggest and negotiate prices with hosts. One of my notable achievements in building the application was designing a visually immersive environment for creating new accommodations and providing a comprehensive preview when modifications are desired. This includes real-time data to ensure that hosts can constantly monitor and display the most relevant information. 2023',
+        description:'Livinng es una aplicación diseñada para la búsqueda de alojamiento que ofrece a los clientes la posibilidad de sugerir y negociar precios con los anfitriones. Uno de mis logros notables en la creación de la aplicación fue diseñar un entorno visualmente inmersivo para crear nuevas adaptaciones y proporcionar una vista previa completa cuando se desean realizar modificaciones. Esto incluye datos en tiempo real para garantizar que los anfitriones puedan monitorear y mostrar constantemente la información más relevante. 2023',
         skill: ['NextJs', 'Javascript', 'Tailwind', 'Trello'],
         url:'https://livinng.co/',
         youtube: 'https://www.youtube.com/watch?v=aS9y2Qi39go',

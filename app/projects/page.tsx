@@ -16,7 +16,7 @@ export interface ProjectsProp {
   image: string[];
   description: string;
   skill: string[];
-  url: string;
+  url?: string;
   git: string;
 }
 
@@ -31,7 +31,7 @@ export default function Projects() {
             className={`${title({ color: "blue" })} ${
               comfortaa.className
             } text-[30px] pl-[20px]`}
-          >{`< Projects />`}</h3>
+          >{`< Proyectos />`}</h3>
 
           <Button
             as={Link}
@@ -41,7 +41,7 @@ export default function Projects() {
             className=" bg-gray-700 mb-2 p-2 mr-2"
           >
             <span className="flex gap-3 items-center text-[16px]">
-              <i className="fi fi-sr-undo text-[16px] text-gray-500"></i>Back
+              <i className="fi fi-sr-undo text-[16px] text-gray-500"></i>Volver
             </span>
           </Button>
         </div>
